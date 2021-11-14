@@ -1,0 +1,94 @@
+{
+  "name": "pi-hole-remote",
+  "version": "0.0.1",
+  "description": "",
+  "engines": {
+    "node": ">=14.16"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "pihole-remote": "./bin/pi-hole-remote.js",
+    "pi-hole-remote": "./bin/pi-hole-remote.js"
+  },
+  "scripts": {
+    "prepack": "npm run compile",
+    "esbuild": "node ./buildSrc/esbuild.js",
+    "tsc": "tsc --declaration --emitDeclarationOnly",
+    "compile": "npm run esbuild && npm run tsc",
+    "tsc-watch": "tsc --watch",
+    "watch": "concurrently \"npm run esbuild -- --watch\" \"npm run tsc -- --watch\"",
+    "packageJson-lint": "node ./buildSrc/lintPackageJson.js",
+    "lockfile-lint": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm --validate-checksum --validate-integrity",
+    "eslint": "eslint src --ext ts",
+    "lint": "npm run eslint && npm run lockfile-lint && npm run packageJson-lint",
+    "prepare": "husky install",
+    "release": "release-it"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naimo84/pi-hole-remote.git"
+  },
+  "keywords": [
+    "pi-hole",
+    "pi-hole-remote"
+  ],
+  "author": {
+    "name": "naimo84",
+    "email": "git@neumann-benjamin.de"
+  },
+  "contributors": [
+    {
+      "name": "naimo84",
+      "email": "git@neumann-benjamin.de"
+    }
+  ],
+  "license": "ISC",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/naimo84/pi-hole-remote/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/naimo84/pi-hole-remote/issues"
+  },
+  "homepage": "https://github.com/naimo84/pi-hole-remote#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "globby": "11.0.4",
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "@release-it/keep-a-changelog": "^2.3.0",
+    "@types/node": "^16.11.5",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "concurrently": "^6.3.0",
+    "esbuild": "^0.13.12",
+    "eslint": "^8.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.4",
+    "lockfile-lint": "^4.6.2",
+    "release-it": "^14.11.6",
+    "typescript": "^4.4.4"
+  },
+  "release-it":{
+    "plugins": {
+      "@release-it/keep-a-changelog": {
+        "filename": "CHANGELOG.md"
+      }
+    },
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    }
+  }
+}

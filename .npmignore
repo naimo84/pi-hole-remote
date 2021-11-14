@@ -1,0 +1,8 @@
+.vscode
+src
+.eslintrc.json
+dev.env
+assets
+buildSrc
+icon.png
+.github
