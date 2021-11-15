@@ -66,7 +66,6 @@
     "standard-version": "^9.3.2"
   },
   "devDependencies": {
-    "@release-it/keep-a-changelog": "^2.3.0",
     "@types/node": "^16.11.5",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
@@ -80,12 +79,7 @@
     "release-it": "^14.11.6",
     "typescript": "^4.4.4"
   },
-  "release-it": {
-    "plugins": {
-      "@release-it/keep-a-changelog": {
-        "filename": "CHANGELOG.md"
-      }
-    },
+  "release-it": {    
     "git": {
       "commitMessage": "chore: release v${version}"
     },
