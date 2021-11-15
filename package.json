@@ -1,6 +1,6 @@
 {
   "name": "pi-hole-remote",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "engines": {
     "node": ">=14.16"
@@ -86,7 +86,7 @@
       "tag": true
     }
   },
-  "release-it": {    
+  "release-it": {
     "git": {
       "commitMessage": "chore: release v${version}"
     },
