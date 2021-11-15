@@ -1,6 +1,6 @@
 import * as os from 'node:os';
 import { Command, Option } from 'commander';
-import { callApi, Config } from '../piHoleRemoteApi';
+import { callApi, Cmd, Config } from '../piHoleRemoteApi';
 import { default as globby } from 'globby';
 import { promises as fsPromises } from 'fs';
 import * as fs from 'fs';
@@ -27,7 +27,7 @@ async function status(cli1: Config, cli2: Command | Config, cli3: Command) {
     }
   }
 
-  const ret: unknown | { data?: unknown } = await callApi(command.name(), options);
+  const ret: unknown | { data?: unknown } = await callApi(command.name() as Cmd, options);
   if (command.name() === 'getAllQueries') {
     console.table((ret as { data?: unknown }).data ? (ret as { data?: unknown }).data : []);
   } else {

@@ -10,8 +10,28 @@ export interface Config {
   disabletime?: number
 }
 
-export async function callApi(commandName: string, config: Config): Promise<string | { data?: unknown } | unknown> {
-  let command = commandName;
+export enum Cmd {
+  status = "status",
+  enable = "enable",
+  disable = "disable",
+  restartdns = "restartdns",
+  version = "version",
+  summaryRaw = "summaryRaw",
+  summary = "summary",
+  overTimeData10mins = "overTimeData10mins",
+  topItems = "topItems",
+  getQuerySources = "getQuerySources",
+  topClients = "topClients",
+  getForwardDestinations = "getForwardDestinations",
+  getQueryTypes = "getQueryTypes",
+  getAllQueries = "getAllQueries",
+  recentBlocked = "recentBlocked",
+  toggle = "toggle",
+  help = "help"
+}
+
+export async function callApi(commandName: Cmd, config: Config): Promise<string | { data?: unknown } | unknown> {
+  let command = commandName.toString();
   if (commandName === 'disable' && config.disabletime && config.disabletime > 0) {
     command = `disable=${config.disabletime}`;
   }
