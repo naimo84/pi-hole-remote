@@ -23,7 +23,8 @@
     "eslint": "eslint src --ext ts",
     "lint": "npm run eslint && npm run lockfile-lint && npm run packageJson-lint",
     "prepare": "husky install",
-    "release": "release-it"
+    "release": "release-it",
+    "version": "standard-version"
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
@@ -61,7 +62,8 @@
     "chalk": "^4.1.2",
     "commander": "^8.3.0",
     "globby": "11.0.4",
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "standard-version": "^9.3.2"
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "^2.3.0",
@@ -78,7 +80,7 @@
     "release-it": "^14.11.6",
     "typescript": "^4.4.4"
   },
-  "release-it":{
+  "release-it": {
     "plugins": {
       "@release-it/keep-a-changelog": {
         "filename": "CHANGELOG.md"
