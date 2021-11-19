@@ -23,20 +23,49 @@ Thanks! :heart:
 ## :cloud: Installation
 
 ```sh
-$ npm install pi-hole-remote
+$ npm install -g pi-hole-remote
 ```
 
-## :yum: How to contribute
+## :cloud: Usage
 
-Have an idea? Found a bug? See [how to contribute][contributing].
+### Usage as cli
+
+``` 
+installed via npm globally: pi-hole-remote
+alternatively: npx pi-hole-remote
+```
+
+```
+Usage: pi-hole-remote [options] [command]
+
+Options:
+  -a, --auth <auth>             auth code
+  -u, --url [url]               URL of pi-hole, without http/https and without admin path. (e.g. pihole:8080)
+  -h, --help                    display help for command
+
+Commands:
+  status                        Display the running status of Pi-hole subsystems
+  enable                        Enable Pi-hole subsystems
+  disable [seconds]             Disable Pi-hole subsystems
+  restartdns                    Restart Pi-hole subsystems
+  version                       Show installed versions of Pi-hole, Admin Console & FTL
+  summaryRaw                    Gives statistics in raw format (no number formatting applied)
+  summary                       Gives statistics in formatted style
+  overTimeData10mins            Data needed for generating the domains/ads over time graph on the Pi-hole web dashboard
+  topItems [count]              Data needed for generating the Top Domain and Top Advertisers Lists
+  getQuerySources               Data needed for generating the Top Clients list
+  topClients [options] [count]  Data needed for generating the Top Clients list
+  getForwardDestinations        Shows number of queries that have been forwarded and the target
+  getQueryTypes                 Shows number of queries that the Pi-hole's DNS server has processed
+  getAllQueries [options]       Get DNS queries data
+  recentBlocked                 Show most recent blocked domain
+  help [command]                display help for command
+```
+
+### Usage in your own node module
 
 ```sh
-git clone https://github.com/naimo84/pi-hole-remote.git
-cd pi-hole-remote
-npm install
-npm run build
-cd /your/project/path
-npm install /path/to/pi-hole-remote
+$ npm install pi-hole-remote
 ```
 
 ## :memo: Documentation
@@ -65,6 +94,19 @@ output:
 $ tsc index.ts
 $ node .\index.js
 { status: 'enabled' }
+```
+
+## :yum: How to contribute
+
+Have an idea? Found a bug? See [how to contribute][contributing].
+
+```sh
+git clone https://github.com/naimo84/pi-hole-remote.git
+cd pi-hole-remote
+npm install
+npm run build
+cd /your/project/path
+npm install /path/to/pi-hole-remote
 ```
 
 ## :scroll: The MIT License
