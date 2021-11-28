@@ -1,4 +1,4 @@
-import * as os from 'node:os';
+import * as os from 'os';
 import { Command, Option } from 'commander';
 import { callApi, Cmd, Config } from '../piHoleRemoteApi';
 import { default as globby } from 'globby';
