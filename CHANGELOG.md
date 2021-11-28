@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/naimo84/pi-hole-remote/compare/v0.1.0...v0.1.1) (2021-11-28)
+
+
+### Bug Fixes
+
+* node:os not found ([813e4e4](https://github.com/naimo84/pi-hole-remote/commit/813e4e44de4a39673551759a23f296cfd90b6f76))
+
 ## [0.1.0](https://github.com/naimo84/pi-hole-remote/compare/v0.0.3...v0.1.0) (2021-11-28)
 
 
