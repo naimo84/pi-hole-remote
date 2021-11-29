@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/naimo84/pi-hole-remote/compare/v0.1.1...v0.1.2) (2021-11-29)
+
+
+### Bug Fixes
+
+* command option ([33a9c20](https://github.com/naimo84/pi-hole-remote/commit/33a9c20f4402dd2cb9c4565c64e0203dad8569c0))
+
 ### [0.1.1](https://github.com/naimo84/pi-hole-remote/compare/v0.1.0...v0.1.1) (2021-11-28)
 
 
