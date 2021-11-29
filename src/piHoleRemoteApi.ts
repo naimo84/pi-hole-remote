@@ -3,7 +3,7 @@ import got from 'got';
 export interface Config {
   argument?: unknown;
   url?: string,
-  command?: string,
+  command?: Cmd | string,
   auth?: string,
   from?: string,
   until?: string,
