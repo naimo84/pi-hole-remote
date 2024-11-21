@@ -64,7 +64,7 @@
     "commander": "^8.3.0",
     "globby": "11.0.4",
     "got": "^11.8.2",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.5.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.5",
